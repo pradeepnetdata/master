@@ -9,8 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.android.alivecor.model.UserData
 import com.android.alivecor.R
+import com.android.alivecor.model.UserData
 import com.android.alivecor.viewmodel.UserViewModel
 import com.google.android.material.textfield.TextInputLayout
 
@@ -116,7 +116,8 @@ class UserProfileFragment : BaseFragment(), View.OnClickListener, OnFocusChangeL
     }
 
     private fun validateUserDetails():Boolean {
-        if (edit_firstname.getText().toString().trim().isEmpty()) {
+        if (edit_firstname.getText().toString().trim().isEmpty() ||
+            !nameValidation(edit_firstname.getText().toString().trim())) {
             inputFirstName.setErrorEnabled(true);
             inputFirstName.setError(getString(R.string.err_msg_firstname));
             requestFocus(inputFirstName);
@@ -126,7 +127,8 @@ class UserProfileFragment : BaseFragment(), View.OnClickListener, OnFocusChangeL
             inputFirstName.setErrorEnabled(false);
         }
 
-        if (edit_lastname.getText().toString().trim().isEmpty()) {
+        if (edit_lastname.getText().toString().trim().isEmpty() ||
+            !nameValidation(edit_lastname.getText().toString().trim())) {
             inputLastName.setErrorEnabled(true);
             inputLastName.setError(getString(R.string.err_msg_lastname));
             requestFocus(inputLastName);
@@ -146,7 +148,14 @@ class UserProfileFragment : BaseFragment(), View.OnClickListener, OnFocusChangeL
             inputUserDate.setError(null);
             inputUserDate.setErrorEnabled(false);
         }
+
+
         return true;
     }
+    fun nameValidation(name: String): Boolean {
+        val regex = Regex("(?i)(^[a-z]+)[a-z .,-]((?! .,-)$){1,25}$")
+       var valid: Boolean  = name.matches(regex)
 
+        return valid
+    }
 }
