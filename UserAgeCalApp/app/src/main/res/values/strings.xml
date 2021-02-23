@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">UserApp</string>
+    <string name="hint_lastname">Last Name </string>
+    <string name="hint_dob">Click here to select DOB</string>
+    <string name="hint_age">Age</string>
+    <string name="hint_name">First Name</string>
+    <string name="err_msg_firstname">Please enter first name</string>
+    <string name="err_msg_lastname">Please enter last name</string>
+    <string name="err_msg_date">Please enter date of birth</string>
+
+    <string name="login">Login</string>
+    <string name="register">Next</string>
+    <string name="btn_previous">Back</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="logout">logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+</resources>
