@@ -21,22 +21,6 @@ class Age {
     }
 
     override fun toString(): String {
-        var sb :StringBuilder = StringBuilder();
-        if(years ==1){
-            sb.append("$years Year,");
-        }else if (years > 1){
-            sb.append("$years Years,");
-        }
-        if(months ==1){
-            sb.append("$months Month,");
-        }else if (months > 1){
-            sb.append("$months Months,");
-        }
-        if(days ==1){
-            sb.append("$days Day");
-        }else if (days > 1){
-            sb.append("$days Days");
-        }
-        return sb.toString()
+        return "$years Years, $months Months, $days Days"
     }
 }
